@@ -1,0 +1,50 @@
+///////////////
+// util.less //
+///////////////
+
+@cols: 22;
+
+@colwidth: 2em;
+@colspace: 1em;
+@colalign: left;
+
+@syswidth: (@colwidth + @colspace) * @cols;
+
+// col span
+.span(@n) {
+  float: @colalign;
+  width: @n * @colwidth + (@n - 1) * @colspace;
+}
+
+.span (@n) when (@colalign = left) {
+  margin-right: @colspace;
+}
+
+.span (@n) when (@colalign = right) {
+  margin-left: @colspace;
+}
+
+// col skip
+.skip(@n) when (@colalign = left) {
+  margin-left: @n * (@colwidth + @colspace);
+}
+
+.skip(@n) when (@colalign = right) {
+  margin-right: @n * (@colwidth + @colspace);
+}
+
+// break the row
+.br() {
+  clear: left;
+}
+
+// hide the element
+.hide() {
+  position: absolute;
+  visibility: hidden;
+}
+
+// remove the element
+.rem() {
+  display: none;
+}
