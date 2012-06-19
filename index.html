@@ -1,0 +1,123 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>grid.less by pvorb</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="javascripts/respond.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <!--[if lt IE 8]>
+    <link rel="stylesheet" href="stylesheets/ie.css">
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+      <div id="header">
+        <nav>
+          <li class="fork"><a href="https://github.com/pvorb/grid.less">View On GitHub</a></li>
+          <li class="downloads"><a href="https://github.com/pvorb/grid.less/zipball/master">ZIP</a></li>
+          <li class="downloads"><a href="https://github.com/pvorb/grid.less/tarball/master">TAR</a></li>
+          <li class="title">DOWNLOADS</li>
+        </nav>
+      </div><!-- end header -->
+
+    <div class="wrapper">
+
+      <section>
+        <div id="title">
+          <h1>grid.less</h1>
+          <p>a semantic grid framework for less css</p>
+          <hr>
+          <span class="credits left">Project maintained by <a href="https://github.com/pvorb">pvorb</a></span>
+          <span class="credits right">Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></span>
+        </div>
+
+        <p>This framework lets you configure your personal grid.</p>
+
+<h2>Getting Started</h2>
+
+<ol>
+<li><p>Install <a href="http://lesscss.org/">Less</a> (<code>npm install -g less</code>).</p></li>
+<li><p>Download <a href="https://raw.github.com/pvorb/grid.less/master/grid.less">grid.less</a>.</p></li>
+<li>
+<p>Start your new less stylesheet (e.g. <code>style.less</code>) and specify the basic variables.</p>
+
+<pre lang="less"><code> @import 'grid.less';
+
+ @cols: 12;
+ @colwidth: 60px;
+ @colspace: 20px;
+</code></pre>
+</li>
+<li><p>Compile with <code>lessc style.less &gt; style.css</code>.</p></li>
+<li>
+<p>Set up you basic HTML document (e.g. <code>index.html</code>).</p>
+
+<div class="highlight">
+<pre> <span class="cp">&lt;!DOCTYPE html&gt;</span>
+ <span class="nt">&lt;html&gt;</span>
+   <span class="nt">&lt;head&gt;</span>
+     <span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+     <span class="nt">&lt;title&gt;</span>grid.less test<span class="nt">&lt;/title&gt;</span>
+     <span class="nt">&lt;link</span> <span class="na">rel=</span><span class="s">"stylesheet"</span> <span class="na">href=</span><span class="s">"style.css"</span><span class="nt">&gt;</span>
+   <span class="nt">&lt;/head&gt;</span>
+   <span class="nt">&lt;body&gt;</span>
+     <span class="nt">&lt;header&gt;&lt;h1&gt;</span>grid.less test<span class="nt">&lt;/h1&gt;&lt;/header&gt;</span>
+     <span class="nt">&lt;article&gt;</span>
+       <span class="nt">&lt;h2&gt;</span>A test article<span class="nt">&lt;/h2&gt;</span>
+       <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.<span class="nt">&lt;p&gt;</span>
+     <span class="nt">&lt;/article&gt;</span>
+     <span class="nt">&lt;aside&gt;</span>
+       <span class="nt">&lt;p&gt;</span>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<span class="nt">&lt;/p&gt;</span>
+     <span class="nt">&lt;/aside&gt;</span>
+     <span class="nt">&lt;footer&gt;</span>Copyright <span class="ni">&amp;copy;</span> 2012 Jon Doe<span class="nt">&lt;/footer&gt;</span>
+   <span class="nt">&lt;/body&gt;</span>
+ <span class="nt">&lt;/html&gt;</span>
+</pre>
+</div>
+</li>
+<li>
+<p>Now extend <code>style.less</code> with</p>
+
+<pre lang="less"><code> // ...
+
+ header {
+   .span(12); // span the whole width
+ }
+ article {
+   .br; // break to a new row
+   .span(8); // span 8 columns
+ }
+ aside {
+   .span(4); // span 4 columns
+ }
+ footer {
+    .br; // break to a new row
+    .skip(4); // skip 4 columns
+    .span(8); // span 8 columns
+ }
+</code></pre>
+</li>
+<li><p>Open <code>index.html</code> in your favorite browser and look at the result.</p></li>
+</ol><h2>License</h2>
+
+<p>Copyright © 2012 <a href="http://vorb.de/">Paul Vorbach</a>.</p>
+
+<p>Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the “Software”), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:</p>
+
+<p>The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.</p>
+
+<p>THE SOFTWARE IS PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.</p>
+      </section>
+
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+    
+  </body>
+</html>
